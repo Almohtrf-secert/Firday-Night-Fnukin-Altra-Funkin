@@ -110,22 +110,10 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...optionShit.length)
 		
 		switch (i) {
-		  0 = story_mode
 		  1 = Freeplay
-		  2 = credits
-		  3 = options
-		  case 0 :
-		  menuItem.x = 800;
-		  menuItem.y = 100;
 		  case 1 :
 		  menuItem.x = 800;
 		  menuItem.y = 320;
-		  case 2 :
-		  menuItem.x = 800;
-		  menuItem.y = 540;
-		  case 3 :
-		  menuItem.x = 800;
-		  menuItem.y = 760;
 		}
 		
 		
