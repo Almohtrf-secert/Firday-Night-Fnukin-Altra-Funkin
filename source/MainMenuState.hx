@@ -108,7 +108,8 @@ class MainMenuState extends MusicBeatState
 		}*/
 
 		for (i in 0...optionShit.length)
-		switch (i) 
+		
+		switch (i) {
 		  0 = story_mode
 		  1 = Freeplay
 		  2 = credits
@@ -125,6 +126,8 @@ class MainMenuState extends MusicBeatState
 		  case 3 :
 		  menuItem.x = 800;
 		  menuItem.y = 760;
+		}
+		
 		
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
