@@ -35,7 +35,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-	//	#if MODS_ALLOWED 'mods', #end
+		//#if MODS_ALLOWED 'mods', #end
 	//	#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 	//	#if !switch 'donate', #end
@@ -87,7 +87,7 @@ class MainMenuState extends MusicBeatState
 		add(camFollow);
 		add(camFollowPos);
 
-		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		magenta.scrollFactor.set(0, yScroll);
 		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
 		magenta.updateHitbox();
@@ -108,6 +108,24 @@ class MainMenuState extends MusicBeatState
 		}*/
 
 		for (i in 0...optionShit.length)
+		switch (i) {
+		  0 = story_mode
+		  1 = Freeplay
+		  2 = credits
+		  3 = options
+		  case 0 :
+		  menuItem.x = 800;
+		  menuItem.y = 100;
+		  case 1 :
+		  menuItem.x = 800;
+		  menuItem.y = 320;
+		  case 2 :
+		  menuItem.x = 800;
+		  menuItem.y = 540;
+		  case 3 :
+		  menuItem.x = 800;
+		  menuItem.y = 760;
+		}
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
@@ -117,7 +135,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
-			menuItem.x= 1100;
+			menuItem.ID = i;
 			menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
@@ -223,7 +241,7 @@ class MainMenuState extends MusicBeatState
 								ease: FlxEase.quadOut,
 								onComplete: function(twn:FlxTween)
 								{
-									
+									spr.kill();
 								}
 							});
 						}
