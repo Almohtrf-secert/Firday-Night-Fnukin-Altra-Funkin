@@ -175,7 +175,7 @@ class MainMenuState extends MusicBeatState
         _menuGroup = new FlxGroup();
 
         // Create the "Free Play" button
-        _playBtn = new FlxButton(30, 110, "Free Play", onStartFreeplay);
+        _playBtn = new FlxButton(30, 110, "freeplay", onStartFreeplay);
         _playBtn.color = FlxColor.WHITE;
         _menuGroup.add(_playBtn);
 
@@ -185,12 +185,12 @@ class MainMenuState extends MusicBeatState
         _menuGroup.add(_storyBtn);
 
         // Create the "Options" button
-        _optionsBtn = new FlxButton(330, 110, "Options", onOptions);
+        _optionsBtn = new FlxButton(330, 110, "options", onOptions);
         _optionsBtn.color = FlxColor.WHITE;
         _menuGroup.add(_optionsBtn);
 
         // Create the "Credits" button
-        _creditsBtn = new FlxButton(480, 110, "Credits", onCredits);
+        _creditsBtn = new FlxButton(480, 110, "credits", onCredits);
         _creditsBtn.color = FlxColor.WHITE;
         _menuGroup.add(_creditsBtn);
 
