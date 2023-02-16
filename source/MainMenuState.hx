@@ -20,6 +20,19 @@ import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
+import flixel.FlxGroup;
+import flixel.FlxState;
+import flixel.addons.ui.FlxButton;
+import flixel.addons.ui.FlxText;
+import flixel.util.FlxColor;
+
+class MainMenuState extends FlxState
+{
+    private var _menuGroup:FlxGroup;
+    private var _playBtn:FlxButton;
+    private var _storyBtn:FlxButton;
+    private var _optionsBtn:FlxButton;
+    private var _creditsBtn:FlxButton;
 
 using StringTools;
 
@@ -157,7 +170,54 @@ class MainMenuState extends MusicBeatState
 		#end
 
 		super.create();
-	}
+		//bruh i tired in this code :|
+        // Create the menu group
+        _menuGroup = new FlxGroup();
+
+        // Create the "Free Play" button
+        _playBtn = new FlxButton(30, 110, "Free Play", onStartFreeplay);
+        _playBtn.color = FlxColor.WHITE;
+        _menuGroup.add(_playBtn);
+
+        // Create the "Story Mode" button
+        _storyBtn = new FlxButton(180, 110, "Story Mode", onStartStoryMode);
+        _storyBtn.color = FlxColor.WHITE;
+        _menuGroup.add(_storyBtn);
+
+        // Create the "Options" button
+        _optionsBtn = new FlxButton(330, 110, "Options", onOptions);
+        _optionsBtn.color = FlxColor.WHITE;
+        _menuGroup.add(_optionsBtn);
+
+        // Create the "Credits" button
+        _creditsBtn = new FlxButton(480, 110, "Credits", onCredits);
+        _creditsBtn.color = FlxColor.WHITE;
+        _menuGroup.add(_creditsBtn);
+
+        add(_menuGroup);
+    }
+
+    private function onStartFreeplay():Void
+    {
+        FlxG.switchState(new FreeplayState());
+    }
+
+    private function onStartStoryMode():Void
+    {
+        FlxG.switchState(new StoryState());
+    }
+
+    private function onOptions():Void
+    {
+        // Handle the "Options" button click
+    }
+
+    private function onCredits():Void
+    {
+        // Handle the "Credits" button click
+    }
+}
+
 
 	#if ACHIEVEMENTS_ALLOWED
 	// Unlocks "Freaky on a Friday Night" achievement
