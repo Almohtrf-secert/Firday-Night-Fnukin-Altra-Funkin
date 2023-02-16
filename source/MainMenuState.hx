@@ -180,7 +180,7 @@ class MainMenuState extends MusicBeatState
         _menuGroup.add(_playBtn);
 
         // Create the "Story Mode" button
-        _storyBtn = new FlxButton(180, 110, "Story Mode", onStartStoryMode);
+        _storyBtn = new FlxButton(180, 110, "Story_mode", onStartStoryMode);
         _storyBtn.color = FlxColor.WHITE;
         _menuGroup.add(_storyBtn);
 
